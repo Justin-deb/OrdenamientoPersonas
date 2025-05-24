@@ -9,6 +9,7 @@ public class Data {
     private int counter = 0;
     
     public Person[] readArray(int max){
+        counter = 0;
         final int MAX_VALUES = max;
         Person[] list = new Person[MAX_VALUES];
         try {
@@ -36,6 +37,7 @@ public class Data {
     }
     
     public Person[] readArrayQuicksort(int max){
+        counter = 0;
         final int MAX_VALUES = max;
         SortAlgorithms s = new SortAlgorithms();
         Person[] list = new Person[MAX_VALUES];
@@ -66,6 +68,7 @@ public class Data {
     }
     
     public Person[] readArrayMergesort(int max){
+        counter = 0;
         final int MAX_VALUES = max;
         Person[] list = new Person[MAX_VALUES];
         SortAlgorithms s = new SortAlgorithms();
@@ -96,6 +99,7 @@ public class Data {
     }
     
     public BinarySearchTree<Person> readTree(int max){
+        counter = 0;
         final int MAX_VALUES = max;
         BinarySearchTree<Person> t =  new BinarySearchTree<>();
         try {

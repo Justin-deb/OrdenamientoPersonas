@@ -1,8 +1,5 @@
 package mainpackage;
-/**
- *
- * @author Justin
- */
+
 public class Main {
     private static final int MAX_VALUES = 100000;
     public static void main(String[] args) {    

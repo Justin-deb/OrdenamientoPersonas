@@ -1,7 +1,5 @@
 package mainpackage;
 
-import java.util.Comparator;
-
 public record Person(int id, String name, int age) implements Comparable<Person>{
 
     @Override
