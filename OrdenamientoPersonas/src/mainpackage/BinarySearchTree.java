@@ -28,4 +28,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
         
         return inorderHelper(root.getLeft()) + root.getValue().toString() +"\n"+ inorderHelper(root.getRight());
     }
+    
+    public T getRoot(){
+        return root.getValue();
+    }
 }
