@@ -4,6 +4,8 @@
  */
 package mainpackage;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Justin
@@ -36,5 +38,51 @@ public class SortAlgorithms<T extends Comparable<T>> {
         arr[end] = temp;
         
         return i;
+    }
+    
+    public void mergeSort(T[] arr){
+        int length = arr.length;
+        
+        if(length == 1) return;
+        
+        int middle = length / 2;
+        
+        T[] leftArr = Arrays.copyOfRange(arr, 0, middle);
+        T[] rightArr = Arrays.copyOfRange(arr, middle, length);
+        
+        mergeSort(leftArr);
+        mergeSort(rightArr);
+        merge(leftArr, rightArr, (T[])arr);
+    }
+    
+    private void merge(T[] leftArr, T[] rightArr, T[] arr){
+        int leftSize = arr.length /2;
+        int rightSize = arr.length - leftSize;
+        
+        T[] leftTArr = (T[])leftArr;
+        
+        int i = 0, l = 0, r = 0;
+        
+        while(l < leftSize && r < rightSize){
+            if(leftArr[l].compareTo(rightArr[r]) < 0){
+                arr[i] = leftArr[l];
+                i++;
+                l++;
+            }else{
+                arr[i] = rightArr[r];
+                i++;
+                r++;
+            }
+        }
+        while(l < leftSize){
+            arr[i] = leftArr[l];
+            i++;
+            l++;
+        }
+        while(r < rightSize){
+            arr[i] = rightArr[r];
+            i++;
+            r++;
+        }
     }
 }
